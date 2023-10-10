@@ -5,6 +5,12 @@
 // Expected Outputs :
 // For example, if the input is Hello Js World 2023, the function should return "2023 World Js Hello".
 
+
+
+
+
+
+
 let j;
 let reversedWord = "";
 
@@ -36,3 +42,32 @@ function reverseSentence(word) {
   return console.log(reverse);
 }
 reverseSentence("Hello Js World 2023");
+
+
+function tersCevir(cumle) {
+    
+  let kelimeBaslangic = 0;
+
+  let tersCumle = "";
+
+  for (let i = 0; i <= cumle.length; i++) {
+
+    if (cumle[i] === " " || i === cumle.length) {
+
+      let kelimeSonu = i - 1;
+      let kelimem = "";
+
+      for (let j = kelimeBaslangic; j <= kelimeSonu; j++) {
+        kelimem += cumle[j];
+      }
+
+      tersCumle = kelimem + " " + tersCumle;
+
+      kelimeBaslangic = i + 1;
+    }
+  }
+  return tersCumle;
+}
+
+let cumle = "Hello Js World 2023";
+console.log(tersCevir(cumle));
