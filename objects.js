@@ -1,30 +1,52 @@
+// // const obj = {
+// //   rabbit: "🥹",
+// //   year: 1,
+// // };
+// // obj["rabbit"] = "🖥️";
+// // console.log(obj["rabbit"]);
+
+// // const obj = new Object();
+// // obj.rabbit = "👝";
+// // console.log(obj.rabbit);
+
+// // const organ = { dna: Math.random() };
+
+// // const objt = Object.create(organ);
+// // console.log(objt.dna);
+
+// // console.log(Object.getPrototypeOf(objt))
 // const obj = {
-//   rabbit: "🥹",
-//   year: 1,
+//   name: "ahmet",
+//   age: 33,
+//   lastname: true,
+//   fullname() {
+//     console.log(this.name);
+//   },
 // };
-// obj["rabbit"] = "🖥️";
-// console.log(obj["rabbit"]);
+// console.log(obj);
+// // const legs = 8;
+// // const name = "ahmet";
 
-// const obj = new Object();
-// obj.rabbit = "👝";
-// console.log(obj.rabbit);
+// // const object = {
+// //   name,
+// //   legs,
+// // };
+// obj.fullname();
 
-// const organ = { dna: Math.random() };
+// // // console.log(object);
 
-// const objt = Object.create(organ);
-// console.log(objt.dna);
-
-// console.log(Object.getPrototypeOf(objt))
-const obj = Object.create({});
-console.log(obj);
-Object.defineProperty(obj, "name", { value: "kaya", enumerable: false });
-console.log(obj.prototype);
-// const legs = 8;
-// const name = "ahmet";
-
-// const object = {
-//   name,
-//   legs,
-// };
-
-// // console.log(object);
+function Person(name, surname, birth) {
+  this.name = name;
+  this.surname = surname;
+  this.birth = birth;
+  this.fullname = function () {
+    return this.name + " " + this.surname;
+  };
+  this.getAge = function () {
+    return new Date().getFullYear() - birth;
+  };
+}
+const burak = new Person("Burak", "Kaya", 1990);
+console.log(burak );
+console.log(burak.getAge());
+console.log(burak.fullname());
