@@ -78,3 +78,11 @@ console.log(findTargetParts(input, 9));
 //   return sum;
 // }, []);
 // console.log(restler);
+
+// *if first dice is 1 and second dice is 6, output should be 'one - six'
+// *For example :
+// *call this function with dices(10) Yo should display all 10 result.
+// * And display the result in the following format on the console:
+// * for Example:
+// * 1st dice: 2 2nd dice: 3 output => 'two' - 'three'
+// * 1st dice: 6 2nd dice: 4 output => 'four' - 'six' // Always dsiplay the low dice first.
