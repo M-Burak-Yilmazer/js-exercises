@@ -1,11 +1,3 @@
-let given_number = [8, 148, 457];
-let output = ["VIII", "CXLVIII", "CDLVII"];
-
-let romanNumber = {
-  birler: { 1: "I", 5: "V", 10: "X" },
-  onlar: { 10: "X", 50: "L", 100: "C" },
-  yüzler: { 100: "C", 500: "D", 1000: "M" },
-};
 // let sonuc = "";
 // let getRoman = (number) => {
 //   let kalan = number % 5;
@@ -49,29 +41,63 @@ let romanNumber = {
 
 // };
 
-let numberone = 456;
-let result = "";
-let numberOne = numberone.toString();
+// let numberone = 13;
+// let sonuc = "";
+// let numberOne = numberone.toString();
 
-for (let i = numberOne.length - 1; i >= 0; i--) {
-  let kalan = numberOne[i] % 5;
+// for (let i = numberOne.length - 1; i >= 0; i--) {
+//   let kalan = numberOne[i] % 5;
 
-  for (let j = 0; j < 1; j++) {
-    if (numberOne[i] < 5) {
-      if (kalan < 4) {
-        for (let i = 0; i < kalan; i++) {
-          sonuc += romanNumber.birler[1];
-        }
-      } else {
-        sonuc += romanNumber.birler[1] + romanNumber.birler[5];
-      }
-    } else if (numberOne[i] > 5) {
-      if (kalan < 4) {
-        sonuc = romanNumber.birler[5];
-        for (let i = 0; i < kalan; i++) {
-          sonuc += romanNumber.birler[1];
-        }
-      }
-    }
+//   for (let j = 0; j < 1; j++) {
+//     if (numberOne[0] < 5) {
+//       if (kalan < 4) {
+//         for (let i = 0; i < kalan; i++) {
+//           sonuc += romanNumber.birler[1];
+//         }
+//       } else {
+//         sonuc += romanNumber.birler[1] + romanNumber.birler[5];
+//       }
+//     } else if (numberOne[0] > 5) {
+//       if (kalan < 4) {
+//         sonuc = romanNumber.birler[5];
+//         for (let i = 0; i < kalan; i++) {
+//           sonuc += romanNumber.birler[1];
+//         }
+//       } else {
+//         sonuc += romanNumber.birler[1] + romanNumber.birler[10];
+//       }
+//     }
+//   }
+// }
+
+// console.log(sonuc);
+
+const romanNumerals = {
+  M: 1000,
+  CM: 900,
+  D: 500,
+  CD: 400,
+  C: 100,
+  XC: 90,
+  L: 50,
+  XL: 40,
+  X: 10,
+  IX: 9,
+  V: 5,
+  IV: 4,
+  I: 1,
+};
+
+let num = 334;
+let roman = "";
+console.log(romanNumerals);
+
+for (let key in romanNumerals) {
+  console.log(key);
+  numbervalue = romanNumerals[key];
+  while (num >= numbervalue) {
+    roman += key;
+    num -= numbervalue;
   }
 }
+console.log(roman);
